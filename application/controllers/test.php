@@ -19,7 +19,16 @@ class Test extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->helper('form');
+		echo form_open();		
+		echo form_input();
+		echo form_password();
+		echo form_close();
 		print 'Start CodePlatform Develop';
+		$this->load->helper('language');
+		$this->lang->load('general', 'italiano');
+		echo lang('general_message','form');
+		$c= print $this->lang->line('error_email_missing');
 	}
 }
 
